@@ -31,6 +31,8 @@ const limiter = rateLimit({
 app.set('trust proxy', true);
 //app.use(limiter);
 app.use(cors({ credentials: true,  origin: process.env.CLIENT_URL || '*' }));
+app.set("Access-Control-Allow-Origin",process.env.CLIENT_URL || 'http://localhost:3000')
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 io.use((socket, next) => {
