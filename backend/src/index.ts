@@ -28,7 +28,7 @@ const limiter = rateLimit({
   max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
   message: "Too many requests from this IP, please try again after 15 minutes",
 });
-app.use(limiter);
+//app.use(limiter);
 app.use(cors({ credentials: true,  origin: process.env.CLIENT_URL || '*' }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ extended: true, limit: '50mb' }));
