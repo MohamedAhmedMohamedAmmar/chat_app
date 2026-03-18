@@ -69,16 +69,16 @@ app.use((req, res, next) => {
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
-io.use((socket, next) => {
-  const cookie = socket.handshake.headers.cookie;
-  if (!cookie) {
-    console.log("No token provided in handshake");
-    socket.emit("auth:error", { message: "No token provided" });
-    socket.disconnect(true);
-    return;
-  }
-  next();
-});
+// io.use((socket, next) => {
+//   const cookie = socket.handshake.headers.cookie;
+//   if (!cookie) {
+//     console.log("No token provided in handshake");
+//     socket.emit("auth:error", { message: "No token provided" });
+//     socket.disconnect(true);
+//     return;
+//   }
+//   next();
+// });
 
 connectDB();
 InitSocket(io);
