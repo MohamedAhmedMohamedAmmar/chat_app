@@ -1,0 +1,7 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/", "dist/", "coverage/"],
+  "watch": ["src"],
+  "exec": "npx tsx ./src/index.ts",
+  "ext": "ts,js,json"
+}

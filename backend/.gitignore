@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/build
+/uploads
+/*.png
+.*env
+/src/uplode
+/*.txt
+/.env.*
