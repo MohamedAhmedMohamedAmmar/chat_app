@@ -2,15 +2,10 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "functions": {
-    "dist/src/index.js": {
-      "runtime": "@vercel/node@3"
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "dist/src/index.js"
+      "source": "/(.*)",
+      "destination": "/src/index.js"
     }
   ]
 }
