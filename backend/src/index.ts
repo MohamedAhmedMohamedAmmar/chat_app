@@ -106,9 +106,9 @@ app.use(
   }
 );
 
-httpServer.listen(process.env.PORT || 5001, () => {
-  console.log(`Server is running on port ${process.env.PORT || 5001}`);
-  console.log(
-    `WebSocket server ready on ws://localhost:${process.env.PORT || 5001}`
-  );
-});
+if (process.env.NODE_ENV !== "production") {
+  httpServer.listen(process.env.PORT || 5001, () => {
+    console.log(`Server running on port ${process.env.PORT || 5001}`);
+  });
+}
+export default app;
